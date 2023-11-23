@@ -1,19 +1,18 @@
 import { useRef } from "react";
 import { RecognitionFeature } from "../../core/plls";
 import { useConfig } from "../state/config";
-import { ColorVisualization, ColorVisualizationProps } from "./color-visualization";
 
-const HINTS: Record<RecognitionFeature, ColorVisualizationProps> = {
-  completedFace: { colors: ["green", "green", "green", "gray", "gray", "gray"], highlights: [0, 1, 2] },
-  doubleHeadlights: { colors: ["green", "gray", "green", "orange", "gray", "orange"], highlights: [0, 2, 3, 5] },
-  headlightsAndBlock: { colors: ["green", "gray", "green", "orange", "orange", "gray"], highlights: [0, 2, 3, 4] },
-  loneHeadlights: { colors: ["green", "gray", "green", "gray", "gray", "gray"], highlights: [0, 2] },
-  doubleBlocks: { colors: ["green", "green", "gray", "gray", "orange", "orange"], highlights: [0, 1, 4, 5] },
-  outsideBlock: { colors: ["green", "green", "gray", "gray", "gray", "gray"], highlights: [0, 1] },
-  insideBlock: { colors: ["gray", "green", "green", "gray", "gray", "gray"], highlights: [1, 2] },
-  bookends: { colors: ["green", "gray", "gray", "gray", "gray", "green"], highlights: [0, 5] },
-  noBookends: { colors: ["green", "gray", "gray", "gray", "gray", "orange"], highlights: [0, 5] },
-};
+// const HINTS: Record<RecognitionFeature, ColorVisualizationProps> = {
+//   completedFace: { colors: ["green", "green", "green", "gray", "gray", "gray"], highlights: [0, 1, 2] },
+//   doubleHeadlights: { colors: ["green", "gray", "green", "orange", "gray", "orange"], highlights: [0, 2, 3, 5] },
+//   headlightsAndBlock: { colors: ["green", "gray", "green", "orange", "orange", "gray"], highlights: [0, 2, 3, 4] },
+//   loneHeadlights: { colors: ["green", "gray", "green", "gray", "gray", "gray"], highlights: [0, 2] },
+//   doubleBlocks: { colors: ["green", "green", "gray", "gray", "orange", "orange"], highlights: [0, 1, 4, 5] },
+//   outsideBlock: { colors: ["green", "green", "gray", "gray", "gray", "gray"], highlights: [0, 1] },
+//   insideBlock: { colors: ["gray", "green", "green", "gray", "gray", "gray"], highlights: [1, 2] },
+//   bookends: { colors: ["green", "gray", "gray", "gray", "gray", "green"], highlights: [0, 5] },
+//   noBookends: { colors: ["green", "gray", "gray", "gray", "gray", "orange"], highlights: [0, 5] },
+// };
 
 const RECOGNITION_FEATURES: Record<RecognitionFeature, string> = {
   completedFace: "Completed face",
@@ -37,6 +36,7 @@ export function SettingsModal() {
 
   return (
     <>
+      {/** @ts-ignore */}
       <button className="btn btn-neutral" onClick={() => modalRef.current?.showModal()}>
         Settings
       </button>
